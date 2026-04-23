@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DPL Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>🏏 DPL Cricket Dashboard</h1>
+<h2 class="league">Downtown Premier League</h2>
+
+<div class="box">
+  <h3>Add Team</h3>
+  <input id="teamName" placeholder="Team Name">
+  <input id="players" placeholder="Players (comma separated)">
+  <button onclick="addTeam()">Add Team</button>
+</div>
+
+<div class="box">
+  <button onclick="generateFixtures()">Generate Fixtures</button>
+</div>
+
+<div class="box">
+  <h3>Fixtures</h3>
+  <table id="fixtures">
+    <thead>
+      <tr>
+        <th>ID</th><th>Team 1</th><th>Team 2</th>
+        <th>Score</th><th>Winner</th><th>Save</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<div class="box">
+  <h3>Points Table</h3>
+  <table id="points">
+    <thead>
+      <tr><th>Team</th><th>Points</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
