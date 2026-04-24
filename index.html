@@ -448,7 +448,7 @@
 <div class="container">
 
   <!-- STATS BAR -->
-  <div class="stats-bar">
+  <div class="stats-bar" style="justify-content:space-between;">
     <div class="stat-item">
       <span class="stat-icon">🏆</span>
       <div class="stat-info">
@@ -476,6 +476,9 @@
         <span class="stat-label">Stage</span>
         <span class="stat-value" id="statStage">Setup</span>
       </div>
+    </div>
+    <div class="stat-item" style="flex:0;">
+      <button class="btn" onclick="resetDashboard()" style="background:linear-gradient(135deg,#7f1d1d,#b91c1c);color:white;font-size:0.82em;padding:9px 16px;box-shadow:0 4px 14px rgba(185,28,28,0.35);">🗑️ Reset All</button>
     </div>
   </div>
 
@@ -945,6 +948,15 @@ function restoreUI() {
     showChampion(state.finalMatch.winner);
   }
   updateStats();
+}
+
+// ══════════════════════════════════════════════════════
+//  RESET
+// ══════════════════════════════════════════════════════
+function resetDashboard() {
+  if (!confirm('Reset the entire dashboard? All teams, fixtures, scores and results will be deleted.')) return;
+  localStorage.removeItem('dpl_state');
+  location.reload();
 }
 
 // ══════════════════════════════════════════════════════
